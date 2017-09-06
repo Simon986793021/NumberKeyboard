@@ -1,6 +1,9 @@
 # NumberKeyboard
 封装好的数字键盘库
 
+![image](https://github.com/Simon986793021/NumberKeyboard/blob/master/keyboard/src/main/res/drawable/gif.gif)
+
+
 # 用法
 1.在项目build.gradle文件中添加jitpack，添加jitpcak就够了。
 
