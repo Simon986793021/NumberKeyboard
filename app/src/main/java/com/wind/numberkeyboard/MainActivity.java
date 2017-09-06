@@ -21,20 +21,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         editText= (EditText) findViewById(R.id.et_numberplate);
         changebutton= (Button) findViewById(R.id.bt_change_keyboard);
-        final OfoKeyboard keyboard = new OfoKeyboard(MainActivity.this);
+        final OfoKeyboard keyboard = new OfoKeyboard(MainActivity.this);//获取到keyboard对象
         changebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                keyboard.attachTo(editText,true);
+                keyboard.attachTo(editText,true);//eiditext绑定keyboard，true表示随机数字
             }
         });
         editText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                keyboard.attachTo(editText,false);
+                keyboard.attachTo(editText,false);//eiditext绑定keyboard，false表示普通数字键盘
 
             }
         });
+        /*
+        确定按钮
+         */
         keyboard.setOnOkClick(new OfoKeyboard.OnOkClick() {
             @Override
             public void onOkClick() {
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,editText.getText().toString(),Toast.LENGTH_SHORT).show();
             }
         });
+        //隐藏键盘按钮
         keyboard.setOnCancelClick(new OfoKeyboard.OnCancelClcik() {
             @Override
             public void onCancelClick() {
